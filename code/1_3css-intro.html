@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>学习css</title>
+    <!-- 内部样式表，在当前文件的style标签中设置样式
+			(1)又称为：嵌入式
+			(2)将CSS代码写到HTML页面内部，即将所有的CSS代码抽取出来，单独放到一个 style标签 中
+			(3)style标签理论上可以放在HTML文档的任何地方，但一般会放在文档的 head标签 中
+			(4)优缺点：
+  				优点：样式和结构代码部分分离，代码结构清晰
+  				缺点：并没有实现结构和样式完全分离
+			(5)控制范围：只能控制一个页面
+			(6)日常练习时使用
+	 -->
+    <style>
+        /* 元素选择器 */
+        /* 分组选择器 */
+        h4,
+        h5,
+        .hahah {
+            background-color: red;
+        }
+
+        input:focus {
+            color: yellow;
+        }
+
+        /* class选择器 */
+        .title {
+            text-align: center;
+            font-size: 5em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* 伪类选择器 : */
+        .title:hover {
+            font-size: 10em;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .mytext {
+            text-decoration: underline;
+            text-align: center;
+            text-indent: 20px;
+            line-height: 100px;
+        }
+
+        /* 后代选择器 */
+        .content p {
+            font-family: cooper black, Arial, Helvetica, sans-serif;
+            font-size: xx-large;
+        }
+
+        /* 子代选择器 >  */
+        .content>p {
+            font-size: medium;
+        }
+
+        /* 兄弟 + | 就近 ~ */
+
+        .content a:link {
+            color: yellowgreen;
+        }
+
+        .content a:visited {
+            color: purple;
+        }
+
+        .content a:active {
+            color: plum;
+        }
+
+        .universe {
+            margin: auto;
+            /* margin:  top,right,bottom,left; */
+            margin-top: 1em;
+            border: 2em solid black;
+            padding: 2em;
+            width: 50%;
+            height: 30em;
+            background-image: url(https://wallpapercave.com/wp/of9aeav.jpg);
+            background-attachment: fixed;
+            background-repeat: repeat-y;
+            background-position: left bottom;
+            opacity: 0.8;
+        }
+
+        .couplet {
+            /* 块元素和行内元素相互转换 */
+            /* display: block; */
+            /* 块元素的外边距 */
+            margin-top: 2em;
+            margin-bottom: 2em;
+            /* 块元素的边框,会改变块的大小 */
+            border: 0.5em;
+            border-color: coral;
+            /* 块元素的内边距 */
+            padding: 01em;
+            width: 10%;
+            /* color: pink; */
+            border-style: dotted;
+            background-color: pink;
+            color: coral;
+        }
+
+        /* id选择器 */
+        #world {
+            font-family: forte, Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <!-- 外部样式表，通过link标签链接引入
+			(1)又称为：外部式、外链式、链接式引入
+			(2)样式代码单独写到CSS文件中，然后再把CSS文件引入到HTML页面中
+			(3)在HTML文件中引入CSS文件，使用：
+  				<link rel="stylesheet" type="text/css" href="css/my.css"/>
+  				rel：定义当前文档与被链接文档之间的关系，stylesheet表示被链接的文档是一个样式表文件
+  				href：定义所链接外部样式表文件的URL，可以是相对路径
+			(4)优缺点：
+  				优点：完全实现样式与结构相分离
+  				缺点：需要在HTML页面中引入CSS样式文件
+			(5)控制范围：可以控制多个页面
+			(6)开发中最常用,但也不能多用,文件太多会导致,下载次数多,缓存增大,性能下降
+	 -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- 
+        可以在浏览器中的 开发者模式 调试样式
+        sass 用css编程
+        选择器还有很多...
+        单位：建议使用em，em是一个相对单位，即当前元素一个文字的大小
+        css 优先级
+            后引入的样式生效,越精准的越优先
+            行内样式 > id选择器 > class选择器 > 元素选择器
+            子代选择器 > 后代选择器
+        css 默认不用id选择器,使用class选择不用id,js使用id和class选择,因为id全页面唯一,class可以加多个
+            在{}后加.class,创建样式类
+     -->
+</head>
+
+<body>
+    <!-- 行内样式表，在元素上直接设置样式
+			(1)又称为：行内式、内联样式表
+			(2)在标签内部的style属性中设定CSS样式
+			(3)style就是标签的属性
+			(4)可以控制当前标签的样式
+			(5)优缺点：
+  				优点：权重高
+  				缺点：书写繁琐，结构样式混乱，没有体现样式与结构相分离
+			(6)控制范围：只能控制一个标签
+			(7)不推荐大量使用，适合于修改简单样式
+	-->
+    <div class="title">
+        <span style="font-family: forte; color:pink;">Hello!</span>
+        <span class="blue" id="world">World!</span>
+    </div>
+    <h4>Let's make us living a better life!</h4>
+    <div class="content">
+        <p>I have a Hello.</p>
+        <p>I have a World.</p>
+        <div>
+            <p>Aengingg~~</p>
+            <p><a href="https://earth.google.com/web">!- Hello World -!</a></p>
+        </div>
+    </div>
+    <div>
+        <p class="bold italic mytext">
+            Name:
+            <input type="text" name="member" placeholder="Make us know you" size="15em">
+        </p>
+    </div>
+    <div class="universe">
+        <div style="background-color: skyblue; height: 150px; width: 150px; margin: auto;">
+            <div style="background-color: yellowgreen; height: 50%; width: 50%;">
+                <div style="background-color:olive; height: 50%; width: 50%;">
+                </div>
+            </div>
+        </div>
+        <div class="one">
+            <div class="two">
+                <span class="t">Egg</span>
+            </div>
+        </div>
+    </div>
+    <div style="width: 100%;">
+        <div style="margin:auto;width: 50%">
+            <div>
+                <div class="couplet" style="float: left;"> Happy happy happy found ! </div>
+                <div class="couplet" style="float: right;"> Hello hello hello world !</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

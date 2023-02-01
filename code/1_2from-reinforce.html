@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> 用户信息修改页面</title>
+</head>
+
+<body>
+    <form method="get">
+        <h1>修改用户信息</h1>
+        <hr>
+        <h3>用户登录信息</h3>
+        <p>用户名:
+            <input type="text" name="username" placeholder="请输入用户名">
+        </p>
+        <p>密码:
+            <input type="password" name="key" placeholder="请输入用户密码">
+        </p>
+        <p>权限:
+            <select name="role">
+                <option value="1">超级管理员</option>
+                <option value="2">管理员</option>
+                <option value="3">开发人员</option>
+                <option value="4">测试</option>
+            </select>
+        </p>
+        <hr>
+        <h3>用户详情</h3>
+        <p>姓名:
+            <input type="text" name="nickname" placeholder="请输入姓名">
+        </p>
+        <p>生日:
+            <input type="date" name="brith">
+        </p>
+        <p>
+            年龄:
+            <input type="text" name="age" placeholder="请输入年龄" size="6" maxlength="3">
+        </p>
+        <p>
+            性别:
+            <label>
+                <input type="radio" name="gender" value="0"> 未知
+            </label>
+            <label>
+                <input type="radio" name="gender" value="1"> 男
+            </label>
+            <label>
+                <input type="radio" name="gender" value="2"> 女
+            </label>
+        </p>
+
+        <p>
+            地址:
+            <select name="province" style=" width:90px">
+                <option value="请选择市区">请选择省份</option>
+                <option value="北京市">
+                    北京市 </option>
+                <option value="天津市">
+                    天津市 </option>
+                <option value="上海市">
+                    上海市 </option>
+                <option value="重庆市">
+                    重庆市 </option>
+                <option value="河北省">
+                    河北省 </option>
+                <option value="山西省">
+                    山西省 </option>
+                <option value="辽宁省">
+                    辽宁省 </option>
+                <option value="吉林省">
+                    吉林省 </option>
+                <option value="黑龙江省">
+                    黑龙江省</option>
+                <option value="江苏省">
+                    江苏省 </option>
+                <option value="浙江省">
+                    浙江省 </option>
+                <option value="安徽省">
+                    安徽省 </option>
+                <option value="福建省">
+                    福建省 </option>
+                <option value="江西省">
+                    江西省 </option>
+                <option value="山东省">
+                    山东省 </option>
+                <option value="河南省">
+                    河南省 </option>
+                <option value="湖北省">
+                    湖北省 </option>
+                <option value="湖南省">
+                    湖南省 </option>
+                <option value="广东省">
+                    广东省 </option>
+                <option value="海南省">
+                    海南省 </option>
+                <option value="四川省">
+                    四川省 </option>
+                <option value="贵州省">
+                    贵州省 </option>
+                <option value="云南省">
+                    云南省 </option>
+                <option value="陕西省">
+                    陕西省 </option>
+                <option value="甘肃省">
+                    甘肃省 </option>
+                <option value="青海省">
+                    青海省 </option>
+                <option value="台湾省">
+                    台湾省 </option>
+                <option value="广西壮族自治区">
+                    广西壮族自治区</option>
+                <option value="内蒙古自治区">
+                    内蒙古自治区</option>
+                <option value="西藏自治区">
+                    西藏自治区</option>
+                <option value="宁夏回族自治区">
+                    宁夏回族自治区 </option>
+                <option value="新疆维吾尔自治区">
+                    新疆维吾尔自治区</option>
+                <option value="香港特别行政区">
+                    香港特别行政区</option>
+                <option value="澳门特别行政区">
+                    澳门特别行政区</option>
+            </select>
+            <select name="city" style=" width:90px">
+                <option value="请选择市区">请选择市区</option>
+            </select>
+        </p>
+        <p>
+            &emsp;&emsp;&nbsp;
+            <input type="text" name="address" placeholder="请输入详细地址">
+        </p>
+        <hr>
+        <h3>提交</h3>
+        <input type="reset" value="清空">
+        <input type="submit" value="保存">
+    </form>
+</body>
+
+</html>

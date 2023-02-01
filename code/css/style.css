@@ -1,0 +1,60 @@
+h4 {
+    text-align: center;
+    color: brown;
+    background-color: peachpuff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content {
+    text-align: center;
+    border-style: dashed;
+    border-color: aquamarine;
+}
+
+.blue {
+    color: cornflowerblue;
+}
+
+.pink {
+    color: pink;
+}
+
+.red {
+    color: red;
+}
+
+.gold {
+    color: gold;
+}
+
+.one {
+    background-color: white;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    margin-top: 1em;
+    border-radius: 50%;
+
+    position: relative;
+}
+
+.two {
+    background-image: linear-gradient(chocolate,yellow);
+    height: 60%;
+    width: 60%;
+    border-radius: 50%;
+
+    position: relative;
+    top: 20%;
+    left: 20%;
+    text-align: center;
+}
+
+.t{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
+    
+    position: relative;
+    top: 40%;
+}
