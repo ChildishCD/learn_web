@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 外链式js -->
+    <!-- 外链相当与直接复制粘贴代码 -->
+    <script src="js/script.js" type="text/javascript" charset="utf-8"></script>
+    <!-- 内嵌式js -->
+    <script>
+        //debug 浏览器->sources(源代码)
+
+        //javascript 代码
+        //写在head中 或 body最后的位置,因为页面的绘制是从上到下的,需要将页面绘制完全在执行js
+        //具有函数优先的轻量级、解释型或即时编译语言
+        //描述语言，基于对象和事件驱动的脚本语言
+        /*  组成:
+            ECMAScript(核心),面向节点编程
+            DOM(文档对象模型),html描述成树状模型结构,有文档节点,属性节点,元素节点
+            BOM(浏览器对象模型),描述与浏览器进行交互的方法与接口
+            */
+
+        //JS是弱类型语言：在编译后确定数据类型，没有明显的类型，可以随着环境的不同自动变换类型
+        //赋值时自动根据值的类型决定变量的类型,可以自动根据赋予的类型进行转换
+        //可以不加 句号(分号)
+        //js代码出错之后 代码后的{}内的代码不会被执行
+        //直接写在文件中的变量和方法都会在页面加载的时候直接执行
+        //只有function内的代码才会在被调用的时候执行
+        //  不写修饰符为全局变量,若在function内,只有执行后才会有值
+        //  var在function内为局部变量
+        //(1)所有 JavaScript 变量必须以唯一的名称为标识，这些唯一的名称称为标识符
+        //(2)命名规则如下：
+        //     A.字母、下划线和美元符$开始    
+        //     B.不能以 数值|数字 开头
+        //     C.严格区分大小写
+        //     D.不能使用关键字
+
+        //$ var let const 是修饰符 
+        ad = null;//空
+        ab = NaN;//错误
+        a = 1//全局变量
+        a = 'info:'//类型会自动转换
+        let c = "I am b."
+        //let 无法重定义
+        // let c = "I am b."
+        // let c = 0
+        {
+            var b = "I am b."////var局部变量,根据声明的位置定义作用域,可以出块
+            let l = "hahahahaha"//let 没有在块外定义就不能出块    
+            c = "I am c."//let 在块内改值可以出块
+            //let 可以在块内重定义,但是之前的定义会被覆盖,而且会出不了块
+            // let c = 0
+        }
+        const D = "I am D."//const常量,之后不能赋值改变
+        console.log(a + b + c + D + e)
+        console.log(isNaN(ad))
+
+        //$ undefined boolean number string object 是数据类型 + function 函数
+        console.log((0.1 + 0.2).toFixed(2));//定义小数后几位
+        // parseInt()
+        // parseFloat()
+        // isNaN()
+        //为赋予数据的变量数据类型为undefined
+        var e
+        console.log(e)
+        console.log(typeof (e))
+        //object 对象类型
+        //  数组类型
+        nums = [1, 2, 3, 4]
+        //  jason类型
+        car = { type: "Fiat", model: "500", color: "white" };
+
+        //function 定义函数
+        function equals(a, b) {
+            // 1=='1' -> true
+            console.log(a == b)//!(a!=b)
+            // 1==='1' -> false
+            console.log(a === b)//!(a!==b)
+        }
+        var orperate = function () {
+            var a = 1
+            var b = '2'
+            var c = 'asdf'
+            console.log(a + b)//加号会默认为拼接字符串
+            console.log(a * b)//其他计算会转换为数字
+            console.log(parseInt(c))//NaN
+            console.log(eval('1+2+3'))//6
+            console.log(eval('a + b'))//"12"
+        }
+
+        //$ 控制语句
+        //循环
+        for (let i = 0; i < nums.length; i++) {
+            console.log(nums[i])
+        }
+        for (let n in nums) {
+            console.log(n)
+            console.log(nums[n])
+        }
+        nums.forEach(n => {
+            console.log(n)
+        });
+
+        console.log(l)
+    </script>
+    <style>
+        /* div中的文字处于中心的位置 */
+        .text-div-center {
+            font-family: forte;
+            display: -moz-box;
+            /*兼容Firefox*/
+            display: -webkit-box;
+            /*兼容FSafari、Chrome*/
+
+            -moz-box-align: center;
+            /*兼容Firefox*/
+            -webkit-box-align: center;
+            /*兼容FSafari、Chrome */
+
+            -moz-box-pack: center;
+            /*兼容Firefox*/
+            -webkit-box-pack: center;
+            /*兼容FSafari、Chrome */
+        }
+
+        .happy {
+            background-image: url(img/happy.jpg);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: 300%;
+        }
+
+        .sad {
+            background-image: url(img/happy.jpg);
+            background-repeat: no-repeat;
+            background-size: 300%;
+        }
+
+        .text-border-focus {
+            outline: 0;
+            border: 2px solid orange;
+            box-shadow: 0px 0px 10px 0px aquamarine;
+        }
+
+        .text-border-wrong {
+            outline: 0;
+            border: 2px solid red;
+            box-shadow: 0px 0px 10px 0px red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 行内式代码 -->
+    <!-- 配合事件使用,把代码封装成函数 -->
+    <!-- on开头的属性一般为事件... -->
+    <div>
+        <h2>Make me happy:</h2>
+        <!-- document表示html节点,表示当前文档全部的内容,是根节点 -->
+        <!-- this 表示当前节点,跟document.getElementById(id)返回的结果一样,是一个document对象 -->
+        <div id="avadar" class="text-div-center"
+            style="width: 200px; height: 200px;background-color:orange;border-radius: 50%;border-style: dashed;"
+            onmouseover="classAdd(this,'sad')" onmouseleave="classRemove(this,'sad')"
+            onmousedown="classRemove(this,'sad');classAdd(this,'happy')"
+            onmouseup="classRemove(this,'happy');classAdd(this,'sad')">
+        </div>
+    </div>
+
+    <div>
+        <!-- 表单提交触发的事件,默认为ture即正常提交,false为禁止提交 -->
+        <!-- 若提交事件中的代码出错会按照默认正确提交 -->
+        <form id="myform" onsubmit="return checkForm()">
+            <p>Adavar Color:
+                <input type="text" name="ac" id="ac" size="5em">
+
+                <select name="selectac" id="selectac" onchange="selectcolor(this)">
+                    <option value="orange">default</option>
+                    <option value="white">white</option>
+                    <option value="gray">gray</option>
+                </select>
+            </p>
+            <p>Name:
+                <input type="text" name="username" id="username" 
+                onfocus="textFocus(this)" onblur="textFocus(this)">
+                <span id="username-print"></span>
+                <span style="color:crimson ">*</span>
+            </p>
+            <p>Email:
+                <input type="text" name="email" id="email" 
+                onfocus="textFocus(this)" 
+                onblur="textCheck(this,'The email is wrong',/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)">
+                <span id="email-print"></span>
+            </p>
+            <p>Phone:
+                <input type="text" name="tel" id="tel" 
+                onfocus="textFocus(this)"
+                 onblur="textCheck(this,'The email is wrong',/^[1]+[3,8]+\d{9}$/)">
+                <span id="tel-print"></span>
+            </p>
+            <p>Detial:
+                <textarea id='detail' cols="19" rows="5" onkeydown="addDetail()"></textarea>
+            </p>
+            <p>
+                <!-- <input type="reset" value="清空"> -->
+                <input type="submit" value="Submit">
+            </p>
+        </form>
+    </div>
+
+    <script>
+        /*编写事件的步骤
+            1. 确定什么事件
+            2. 事件确定的函数
+                - 找到需要获取值或赋予值的元素
+                - 得到想要的值 或 编写想要的效果
+                - 执行目标效果:更改,返回;添加,输出...
+        */
+        //设置安全颜色
+        function colorFill(node, color) {
+            //getElementById获取第一次出现的node,css选择器可以作用于多个
+            // var elem = document.getElementById(id)
+            node.style.backgroundColor = color
+        }
+        //选择头像的背景颜色并添加到input里
+        function selectcolor(node) {
+            //更改输入框的值
+            var ac = document.getElementById('ac')
+            var selectValue = node.value
+            ac.value = selectValue
+            //更改头像的颜色
+            var avadar = document.getElementById('avadar')
+            avadar.style.backgroundColor = selectValue
+        }
+        //对节点添加一个class
+        function classAdd(node, clazz) {
+            node.classList.add(clazz)
+        }
+        //对节点去掉一个class
+        function classRemove(node, clazz) {
+            node.classList.remove(clazz)
+        }
+        //将textarea中的文字显示到头像上
+        function addDetail() {
+            //判断用户是否按下了enter
+            if (event.keyCode == 13) {
+                var detail = document.getElementById("detail").value
+                document.getElementById("avadar").innerHTML = detail
+            }
+        }
+        function textFocus(node) {
+            node.classList.remove('text-border-wrong')
+            node.parentNode.getElementsByTagName('span')[0].innerHTML = ''
+            //如果有就去除,没有就加上
+            node.classList.toggle('text-border-focus')
+        }
+
+        function checkForm() {
+            //清空其他的错误
+            document.getElementById('email').classList.remove("text-border-wrong")
+            document.getElementById('email-print').innerHTML = ''
+            document.getElementById('tel').classList.remove("text-border-wrong")
+            document.getElementById('tel-print').innerHTML = ''
+            //检查必须提交的 并输出提交信息
+            if(textCheck(document.getElementById('username'), 'Name can\'t be blank!', /^[a-z0-9_-]$/)){
+                alert('Submitted successfully!')
+                return true
+            }else{
+                alert('Submission Failed!')
+                return false
+            }
+        }
+        function textCheck(node, msg, reg) {
+            node.classList.remove('text-border-focus')
+            //获取父节点下的span标签节点
+            var span = node.parentNode.getElementsByTagName('span')[0]
+            span.style.color = "red"
+            //通过正则判断是否正确
+            if (reg.test(node.value)) {
+                node.classList.remove("text-border-wrong");
+                span.innerHTML = ''
+                return true
+            } else {
+                node.classList.add("text-border-wrong");
+                span.innerHTML = msg
+                return false
+            }
+        }
+    </script>
+</body>
+
+</html>
