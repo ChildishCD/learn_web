@@ -1,0 +1,261 @@
+/* div中的文字处于中心的位置 */
+.text-div-center {
+    display: -moz-box;
+    /*兼容Firefox*/
+    display: -webkit-box;
+    /*兼容FSafari、Chrome*/
+
+    -moz-box-align: center;
+    /*兼容Firefox*/
+    -webkit-box-align: center;
+    /*兼容FSafari、Chrome */
+
+    -moz-box-pack: center;
+    /*兼容Firefox*/
+    -webkit-box-pack: center;
+    /*兼容FSafari、Chrome */
+}
+
+/* 防止点击选中文字 */
+body {
+    -moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.ground {
+    /* 父级元素relative */
+    position: relative;
+    width: 1500px;
+    height: 950px;
+    margin: auto;
+
+    background-image: url('../img/ground.png');
+    background-size: cover;
+
+    cursor: url('../img/hammer.ico'), default;
+}
+
+.ground:active {
+    cursor: url('../img/hammer2.ico'), default;
+}
+
+.head {
+    width: 100%;
+    height: 10%;
+
+    background: #3957A4;
+}
+
+.title {
+    text-align: center;
+    margin: auto;
+    height: 100%;
+    padding: 10px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 77px;
+
+    color: #FFC700;
+}
+
+.start {
+    /* 子级元素absolute */
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    bottom: 70px;
+    right: 100px;
+
+    background: #F58115;
+    box-shadow: 0 9px #999;
+    border-radius: 20px;
+    border: 0;
+
+    font-size: 4em;
+    font-weight: 800;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+
+    /* cursor: pointer; */
+    cursor: url('../img/hammer.ico'), default;
+}
+
+.start:hover {
+    color: #FFC700;
+}
+
+.start:active {
+    color: #FFC700;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    cursor: url('../img/hammer2.ico'), default;
+}
+
+.cancel {
+    position: absolute;
+    height: 70px;
+    width: 200px;
+    bottom: 70px;
+    right: 320px;
+
+    background: #F58115;
+    box-shadow: 0 9px #999;
+    border-radius: 15px;
+    border: 0;
+
+    font-size: 3em;
+    font-weight: 800;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+
+    /* cursor: pointer; */
+    cursor: url('../img/hammer.ico'), default;
+}
+
+.cancel:hover {
+    color: #FFC700;
+}
+
+.cancel:active {
+    color: #FFC700;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    cursor: url('../img/hammer2.ico'), default;
+}
+
+.game_show {
+    position: absolute;
+    height: 350px;
+    width: 260px;
+    left: 100px;
+    top: 150px;
+
+    box-sizing: border-box;
+    background: #F58115;
+    border: 15px solid #FFC700;
+    border-radius: 20px;
+
+    font-weight: 800;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    text-indent: 15px;
+}
+
+.rank_show {
+    position: absolute;
+    height: 360px;
+    width: 200px;
+    left: 100px;
+    top: 520px;
+
+    box-sizing: border-box;
+    background: #F58115;
+    border: 15px solid #FFC700;
+    border-radius: 20px;
+
+    font-weight: 800;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    text-indent: 15px;
+}
+
+.h_font {
+    font-size: 40px;
+}
+
+.xh_font {
+    font-size: 100px;
+}
+
+.mole {
+    position: absolute;
+    height: 170px;
+    width: 230px;
+
+    background-image: url('../img/down.png');
+    /* 将背景图片的基准定位在底部 */
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: 0 100%;
+}
+
+.position_one {
+    left: 700px;
+    top: 200px;
+}
+
+.position_two {
+    left: 550px;
+    top: 400px;
+}
+
+.position_three {
+    left: 400px;
+    top: 600px;
+}
+
+.position_four {
+    left: 950px;
+    top: 350px;
+}
+
+.position_five {
+    left: 800px;
+    top: 550px;
+}
+
+.position_six {
+    left: 1200px;
+    top: 500px;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+
+    padding: 16px;
+    font-size: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+
+    right: 0px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-size: 30px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

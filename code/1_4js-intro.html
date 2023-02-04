@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>js-1</title>
     <!-- 外链式js -->
     <!-- 外链相当与直接复制粘贴代码 -->
     <script src="js/script.js" type="text/javascript" charset="utf-8"></script>
@@ -181,20 +181,22 @@
             </p>
             <p>Name:
                 <input type="text" name="username" id="username" 
-                onfocus="textFocus(this)" onblur="textFocus(this)">
-                <span id="username-print"></span>
+                onfocus="textFocus(this)" 
+                onblur="textCheck(document.getElementById('username'), 'The name can\' be blank!', /^[a-z0-9_-]+$/)">
+                <span id="username-print">
+                </span>
                 <span style="color:crimson ">*</span>
             </p>
             <p>Email:
                 <input type="text" name="email" id="email" 
                 onfocus="textFocus(this)" 
-                onblur="textCheck(this,'The email is wrong',/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)">
+                onblur="textCheck(this,'The email is wrong!',/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)">
                 <span id="email-print"></span>
             </p>
             <p>Phone:
                 <input type="text" name="tel" id="tel" 
                 onfocus="textFocus(this)"
-                 onblur="textCheck(this,'The email is wrong',/^[1]+[3,8]+\d{9}$/)">
+                 onblur="textCheck(this,'The number is wrong!',/^[1]+[3,8]+\d{9}$/)">
                 <span id="tel-print"></span>
             </p>
             <p>Detial:
@@ -261,7 +263,7 @@
             document.getElementById('tel').classList.remove("text-border-wrong")
             document.getElementById('tel-print').innerHTML = ''
             //检查必须提交的 并输出提交信息
-            if(textCheck(document.getElementById('username'), 'Name can\'t be blank!', /^[a-z0-9_-]$/)){
+            if(textCheck(document.getElementById('username'), 'The name can\' be blank!', /^[a-z0-9_-]+$/)){
                 alert('Submitted successfully!')
                 return true
             }else{
@@ -277,7 +279,7 @@
             //通过正则判断是否正确
             if (reg.test(node.value)) {
                 node.classList.remove("text-border-wrong");
-                span.innerHTML = ''
+                span.innerHTML = '<img src="img/ok.png" height="15px">'
                 return true
             } else {
                 node.classList.add("text-border-wrong");

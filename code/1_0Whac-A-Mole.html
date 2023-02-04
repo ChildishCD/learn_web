@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Whac-A-Mole</title>
+    <link rel="shortcut icon" href="img/hammer.ico">
+    <link rel="stylesheet" type="text/css" href="css/mole.css" />
+    <script src="js/mole.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body onload="init();clear();">
+    <div class="ground">
+        <!-- 显示头部信息 -->
+        <div class="head">
+            <div class="title">
+                <img src="img/up.png" height="70%">
+                <span>WHAC-A-MOLE！</span>
+            </div>
+        </div>
+        <!-- 显示游戏信息 -->
+        <div class="game_show">
+            <div class="h_font">Sore</div>
+            <div class="xh_font" id="score">0</div>
+            <div class="h_font">Time</div>
+            <div class="h_font" id="time">0.0.0</div>
+        </div>
+        <!-- 显示排名信息 -->
+        <div class="rank_show">
+            <div class="h_font">Rank</div>
+            <ol id="rank_list" style="font-size:30px;margin-left: 15px;margin-top: 10px;"> </ol>
+        </div>
+        <!-- 选择游戏模式 -->
+        <div class="dropdown">
+            <button class="dropbtn" id="dropbtn">Normal</button>
+            <div class="dropdown-content">
+                <a href="javascript:modeNomal()">Normal</a>
+                <a href="javascript:modeBaby()">Baby</a>
+                <a href="javascript:modeHell()">Hell</a>
+            </div>
+        </div>
+        <!-- 游戏开始 -->
+        <button type="button" class="start" id="start" onclick="start(1)">Start</button>
+        <!-- 清零 -->
+        <button type="button" class="cancel" id="cancel" onclick="end()">Cancel</button>
+        <!-- 六只老鼠 -->
+        <div id="one" class="mole position_one" onclick="mole(this)"></div>
+        <div id="two" class="mole position_two" onclick="mole(this)"></div>
+        <div id="three" class="mole position_three" onclick="mole(this)"></div>
+        <div id="four" class="mole position_four" onclick="mole(this)"></div>
+        <div id="five" class="mole position_five" onclick="mole(this)"></div>
+        <div id="six" class="mole position_six" onclick="mole(this)"></div>
+    </div>
+</body>
+
+</html>

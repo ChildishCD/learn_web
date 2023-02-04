@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>js-2</title>
+    <style>
+        .text-div-center {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            font-size: 5em;
+            color: white;
+            display: -moz-box;
+            /*兼容Firefox*/
+            display: -webkit-box;
+            /*兼容FSafari、Chrome*/
+
+            -moz-box-align: center;
+            /*兼容Firefox*/
+            -webkit-box-align: center;
+            /*兼容FSafari、Chrome */
+
+            -moz-box-pack: center;
+            /*兼容Firefox*/
+            -webkit-box-pack: center;
+            /*兼容FSafari、Chrome */
+        }
+
+        .clock {
+            background-color: rosybrown;
+            color: white;
+            border: 10px solid darkred;
+            font-family: Cooper Black;
+            box-shadow: 0px 0px 10px 0px gray;
+            width: 12em;
+            padding: 0.5em
+        }
+    </style>
+    <script>
+        /*
+        1 BOM浏览器对象模型
+        $ windows 对象
+        (1)所有浏览器都支持 window 对象，它代表浏览器的窗口
+        (2)所有全局 JavaScript 对象，函数和变量自动成为 window 对象的成员
+        (3)全局变量是 window 对象的属性
+        (4)全局函数是 window 对象的方法
+        (5)基本方法: alert() prompt() confirm() open() close()
+        (6)定时器方法：setInterval() clearInterval() setTimeout() clearTimeout()
+        $ windows.history对象:back() forward() go(0)
+        $ windows.location对象: location.href =  location.reload()
+        使用：window.方法名 -> 简写：方法名
+        */
+    </script>
+</head>
+
+<body onload="clock()">
+    <h1>BOM Missions</h1>
+    <hr>
+
+    <!-- 显示当前时间 -->
+    <div id="clock" class="clock"></div>
+    </div>
+
+    <!-- window 对象弹出框 -->
+    <h3>1. Window pops</h3>
+    <p>
+        <!-- 在链接中调用函数 -->
+        <a href="javascript:jumpPage()">Bing:</a>
+        <input type="button" value="Bing it!" onclick="bing()">
+    </p>
+
+    <!-- 计时器倒计时和取消 -->
+    <h3>2.Five seconds timer</h3>
+    <div>
+        <p>
+            <input type="button" value="Start" onclick="fiveSecTimer()">
+            <input type="button" value="Cancle" onclick="fiveSecTimer()">
+        </p>
+        <div id='timer_info' class="text-div-center"
+            style="height: 100px; width: 150px; background-color: brown;border-radius: 10%;">0</div>
+    </div>
+
+    <!-- 页面历史操作 -->
+    <h3>3. History</h3>
+    <input type="button" value="Fore" onclick="history.forward()">
+    <input type="button" value="Back" onclick="history.back()">
+    <!-- 刷新  history.go(0)  location.reload() -->
+    <input type="button" value="Reload" onclick="history.go(0)">
+
+    <script>
+        // 提示用户搜索的对话框
+        function bing() {
+            alert('Bing mission start:')//只能打印字符串,想要查看对象的属性,用console.log()
+            var inputMsg = prompt('What you want to bing?')//一个简单的输入框,可以获取用户输入的信息
+            if (confirm('Are you sure?')) {//弹出一个输入框,点击确认或取消返回true或false
+                console.log('true')
+                open('https://www.bing.com/search?q=' + inputMsg)//弹出新的标签页
+            }
+        }
+        // 5秒倒计时
+        function fiveSecTimer() {
+            var info = document.getElementById('timer_info')
+            if (info.innerHTML == '0') {
+                var sec = 5
+                timer = setInterval(function () {
+                    info.innerHTML = --sec
+                    if (sec == 0) {
+                        alert('Timer over!')
+                        clearInterval(timer)
+                    }
+                }, 1000)
+            } else {
+                clearInterval(timer)
+                info.innerHTML = '0'
+            }
+        }
+        // 电子时钟刷新
+        function clock() {
+            setInterval(
+                function () {
+                    var date = new Date()
+                    var dateHtml = '<span>' + date.toLocaleString() + '</span>'
+                    document.getElementById('clock').innerHTML = dateHtml
+                }
+                , 500
+            )
+        }
+        // 跳转页面
+        function jumpPage() {
+            location.href = 'https://www.bing.com'
+        }
+    </script>
+</body>
+
+</html>
