@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/v3.2.8/vue.global.prod.js" type="text/javascript" charset="utf-8"></script>
+
+    <style>
+        .test_colr {
+            width: 200px;
+            height: 200px;
+        }
+
+        .red {
+            color: red
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+        <!-- 指令语法 -->
+        <!-- 
+            v-text, v-html, 
+            v-show, 
+            v-if, v-else, v-else-if, 
+            v-for,
+            v-on, @
+            v-bind, :
+            v-model, 
+            (v-slot, v-pre, v-once, v-memo, v-cloak) -->
+        <div>
+            <!-- = 后支持 data中的属性|表达式|方法 -->
+            <!-- v-bind:?="" 绑定属性 可以简写为:?="" -->
+            <h1 v-bind:class="clazz">你好</h1>
+            <!-- v-html="" v-text="" 会覆盖原来的值-->
+            <h1 v-html="name" :class="clazz">hhhhhhhhhhhhhhhhhhhhhhhhhhh</h1>
+        </div>
+        <div>
+            <!-- v-show 编辑display属性,节点存在于文档中 -->
+            <h1 v-show="age < 18">小朋友</h1>
+            <!-- v-if 会改变页面中的标签,不满足条件直接删除 -->
+            <p v-if="age > 18">
+                <!-- v-bind="" 赋予json绑定多个属性 -->
+                <input v-bind="myattr" :value="'老女人_'+name+'_芳龄'+age" />
+            </p>
+            <p v-else-if="age == 18">
+                <input v-bind="myattr" :value="'黄花大闺女_'+name+'_芳龄'+age" />
+            </p>
+            <p v-else="age < 18">
+                <input v-bind="myattr" :value="'小美女_'+name+'_芳龄'+age" />
+            </p>
+            <!-- |=> 频繁改变用v-show -->
+        </div>
+        <div>
+            <!-- v-on:?="" 或 @?="" 设置监听器 -->
+            <!-- 当调用的方法没有参数的时候,可以省略括号 -->
+            <input type="button" value="漂亮!" @click="good">
+            <input type="button" value="大漂亮!" v-on:click="good">
+            <input type="button" value="真的漂亮!" @click="verygood(5)">
+        </div>
+        <hr>
+        <div>
+            <p>
+                用户名：
+                <input type="text" v-model="name" />
+                <input type="button" value="弹出用户名" @click="popname" />
+            </p>
+            <p>
+                性别：
+                <input type="radio" value="male" v-model="gender" />男
+                <input type="radio" value="female" v-model="gender" />女
+                选中的性别：{{gender}}
+            </p>
+            <p>
+                <!-- 值是数组 -->
+                <input type="checkbox" value="Java" v-model="lg" />Java
+                <input type="checkbox" value="Web" v-model="lg" />Web
+                <input type="checkbox" value="UI" v-model="lg" />UI
+                选中的语言：{{lg}}
+            </p>
+            <p>
+                <select v-model="provice">
+                    <option value="-1">--请选择--</option>
+                    <option value="henan">河南省</option>
+                    <option value="shandong">山东省</option>
+                    <option value="hubei">湖北省</option>
+                    <option value="sichuan">四川省</option>
+                </select>
+                选中的省份：{{provice}}
+            </p>
+            <p>
+                <input type="button" value="显示所有值" @click="show" />
+            <div>显示表单数据的json字符串</div>
+            <p v-html="info"></p>
+            </p>
+            <!-- 案例：根据下拉选中选中的颜色，给div设置样式 -->
+            <p>
+                <select>
+                    <option value="">请选择</option>
+                    <option value="red">红色</option>
+                    <option value="green">绿色</option>
+                    <option value="blue">蓝色</option>
+                </select>
+            <div class="test_colr">改变这里的颜色</div>
+            </p>
+        </div>
+        <hr>
+        <div>
+            {{userlist}}
+            <ul>
+                <li v-for="str in userlist">{{str}}</li>
+            </ul>
+            <ul>
+                <!-- 写一个无意义的标签 -->
+                <template v-for="user in userlist">
+                    <li v-if="user.age<18">{{user.name}} - {{user.age}} </li>
+                </template>
+            </ul>
+            <ul>
+                <li v-for="i in 10">{{i-1}}</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    name: "AA小美",
+                    age: "18",
+                    vip: "$VIP",
+                    intro: "你好我是超级无敌小美, 大家可以叫我大漂亮, 在今后的日子里请大家多多关照",
+                    clazz: "red",
+                    myattr: {
+                        id: "username",
+                        name: "username",
+                        type: "text",
+                        class: "blue",
+                    },
+                    gender: "",
+                    lg: [],
+                    provice: -1,
+                    info: '',
+                    userlist: [
+                        { name: 'A', age: 12 },
+                        { name: 'B', age: 13 },
+                        { name: 'C', age: 14 },
+                        { name: 'D', age: 15 },
+                        { name: 'E', age: 20 },
+                    ]
+                }
+            },
+            methods: {
+                good() {
+                    // this 为vue对象,是一个特殊的object
+                    // 更改或调用vue中的数据要用this
+                    alert(this.intro)
+                    console.log(this)
+                },
+                verygood(count) {
+                    str = this.intro
+                    count--
+                    while (count > 0) {
+                        count--
+                        str = str + this.intro
+                    }
+                    alert(str)
+                },
+                popname() {
+                    alert(this.name)
+                },
+                show() {
+                    console.log(JSON.stringify(this.myattr))
+                    this.info = JSON.stringify(this.myattr)
+
+                    //这行的this 指的是Vue 实例  this.list 就是获取Vue实例中data的list属性
+                    this.userlist.forEach(function (u) {
+                        // 这里的this 是处于forEach方法的回调函数内部，并且参数是匿名方法，所以this可能是undefined或者window
+                        // 除了匿名函数其他的地方都是vue实例
+                        console.log(this)
+                    });
+                    this.userlist.forEach(u => {
+                        //这里的this，也是处于回调函数中，但是回调函数为箭头函数，所以，this指向vue实例，和循环外面是一样的
+                        console.log(this)
+                    });
+                },
+            },
+        }).mount('#app')
+    </script>
+
+</body>
+
+</html>

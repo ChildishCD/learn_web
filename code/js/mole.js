@@ -2,6 +2,10 @@ function init() {
     rankArray = new Array()
     change = true
     moleGap = 2000
+
+    //绑定事件可以直接获取对象后.onclick = 
+
+
 }
 
 function clear() {
@@ -82,8 +86,8 @@ function end() {
         alert('Your score is ' + score)
         // 添加排行
         rankArray.push(score)
-        rankArray.sort()
-        rankArray.reverse()
+        rankArray.sort(function(a, b){return b - a})
+        // rankArray.reverse()
         var list = document.getElementById('rank_list')
         var str = ''
         rankArray.forEach(n => {
@@ -95,7 +99,9 @@ function end() {
         list.innerHTML = str
     }
     // 初始化游戏
-    clear()
+    setTimeout(() => {
+        clear()
+    }, 500)
 }
 
 function mole(node) {
@@ -111,6 +117,7 @@ function mole(node) {
         }
         //如果是出现的状态
         if (pop) {
+            moleStatus[index].pop = false
             node.style.backgroundImage = "url('img/punch.png')"
             document.getElementById('score').innerHTML = ++score
             //如果速度随分数变化
@@ -131,8 +138,7 @@ function mole(node) {
 
             setTimeout(() => {
                 node.style.backgroundImage = "url('img/down.png')"
-                moleStatus[index].pop = false
-            }, 500);
+            }, 500)
         }
 
     }

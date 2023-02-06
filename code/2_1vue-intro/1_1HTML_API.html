@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+
+	<!--
+		API风格为: (https://cn.vuejs.org/examples/#hello-world)
+		>- 选项式 -< | 组合式
+		>- HTML -< | 单文件组件
+		-->
+
+	<!-- 引入 vue 的静态文件 -->
+	<!-- <script src="https://unpkg.com/vue@next"></script> -->
+	<script src="js/v3.2.8/vue.global.prod.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+
+<body>
+
+	<!-- 仅用一个div表示页面的跟节点, 并于一个vue实例绑定 -->
+	<div id="app">
+		<!-- {{}} 这是一个表达式，里面需要写 vue data()返回的属性 -->
+		<!-- 表达式中支持 所有运算符 方法的调用(包含自定义方法和默认方法), 不支持逻辑语句和赋值 -->
+		<h1>欢迎 {{member.vip}} ：{{ member.name + '_芳龄' + member.age}}</h1>
+		<p> 个人简介: {{ member.intro.substring(0,10) + '......' }} </p>
+		<p> 您的积分为: {{ points + 100 }}</p>
+	</div>
+
+	<script>
+		// 想要使用vue，需要创建一个vue实例，并初始化参数
+		// 真正开发只有一个实例,并配合组件一起使用
+		// 1. 创建实例的参数
+		const App = {// 这个常量是一个json,是生成vue实例的参数,里面包含数据,方法...
+			// 1.0 以下为 [选项式API] 参数的固定写法
+
+			// 1.1 data(){} ->  表示一个数据
+			// 		vue中的数据生成方法
+			// 		在json里面写一个json数据生成的方法,并返回数据,相当于是一个json数据
+			data() {//	这里相当于js中的function
+				// 这里可以写业务代码
+				var p = 0
+				var m = "VIP"
+				var member = {
+					"name": "AA小美",
+					"age": "25",
+					"vip": "$" + m,
+					"intro": "你好我是超级无敌小美, 大家可以叫我大漂亮, 在今后的日子里请大家多多关照"
+				}
+				return {// 返回的json对象，就是App中data的值
+					// 前端中key可以不加""
+					// key最好不用关键字
+					points: p,
+					member: member
+				}
+			},
+
+			// 这就是vue生命周期钩子的一部分,可以自定义vue项目各个阶段之间执行的方法,https://cn.vuejs.org/guide/essentials/lifecycle.html#lifecycle-diagram
+			// 1.2  methods: {} ->  表示自定义方法
+			methods: {
+
+			},
+
+			// 1.3  components: {} ->  表示组件
+			components: {
+
+			},
+			// ...还有更多的选项
+
+		};
+		// 2. 创建实例
+		var app = Vue.createApp(App);
+		// 3. 挂载
+		//	一般都根据id绑定元素，必须绑定之后vue才能把值给标签
+		// 	一般情况下，页面只有一个div标签作为根标签，和vue绑定
+		//	绑定完成后就是vue了哈哈哈!
+		app.mount('#app')
+
+		// => 2,3 可以直接一行
+		/*
+		Vue.createApp({
+
+		}).mount("#app")
+		*/
+	</script>
+</body>
+
+</html>

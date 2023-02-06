@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <script src="js/v3.2.8/vue.global.prod.js" type="text/javascript" charset="utf-8"></script>
+    <!-- 利用js存储json数据 -->
+    <script src="data/sm_user_info_data.js" type="text/javascript" charset="utf-8"></script>
+    <script src="data/seats.js" type="text/javascript" charset="utf-8"></script>
+    <script src="data/area_data.js" type="text/javascript" charset="utf-8"></script>
+
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid red;
+            border-collapse: collapse;
+        }
+
+        td {
+            text-align: center;
+            min-width: 80px;
+            line-height: 30px;
+            padding: 0px 5px 0px 5px;
+        }
+
+        td a {
+            margin: 0px 5px 0px 5px;
+        }
+
+        .red {
+            background-color: #f2dede;
+        }
+
+        .green {
+            background-color: #dff0d8;
+        }
+
+        .btn-info {
+            color: #fff;
+            background-color: #5bc0de;
+            border-color: #46b8da;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-bottom: 0;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            background-image: none;
+            border: 1px solid transparent;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            border-radius: 4px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div>
+            <p>省:
+                <select v-model="district.province" @change="showCities">
+                    <option value="-1">--请选择--</option>
+                    <option v-for="p in provinces" :value="p.code">{{p.name}}</option>
+                </select>
+            </p>
+            <p>市:
+                <select v-model="district.city" @change="showAreas">
+                    <option value="-1">--请选择--</option>
+                    <option v-for="c in cities" :value="c.code">{{c.name}}</option>
+                </select>
+            </p>
+            <p>县:
+                <select v-model="district.area">
+                    <option value="-1">--请选择--</option>
+                    <option v-for="a in areas" :value="a.code">{{a.name}}</option>
+                </select>
+            </p>
+        </div>
+
+        <hr>
+
+        <table>
+            <thead>
+                <th>uid</th>
+                <th>昵称</th>
+                <th>年龄</th>
+                <th>地址</th>
+                <th>性别</th>
+                <th>城市</th>
+                <th>星座</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+                <!-- (p,index) in list 可以得到元素在列表中的序列号 -->
+                <!-- 用json赋予:class可以控制挂载多个样式 -->
+                <tr v-for="(user,index) in users" :class={red:index%2==0,green:index%2!=0}>
+                    <td v-html="user.uid">1</td>
+                    <td v-html="user.nickname">紫龙</td>
+                    <td v-html="user.age">14</td>
+                    <td v-html="user.address">江西省九江市</td>
+                    <td v-if="user.gender==1">男</td>
+                    <td v-else-if="user.gender==2">女</td>
+                    <td v-else>未知</td>
+                    <td v-html="user.city">庐山市</td>
+                    <td v-html="user.seat">天龙座</td>
+                    <td>
+                        <!-- javascript:void(0) 激活点击样式,但是点击后不会发生任何事情,也能防止被窥见方法名字 -->
+                        <a href="javascript:void(0)" @click="update(index)">修改</a>
+                        |
+                        <a href="javascript:void(0)" @click="del(index)">删除</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><input type="button" value="添加" @click="add"></p>
+
+        <div v-show="formshow">
+            <form>
+                <p> 昵称：<input type="text" v-model="one.nickname" /> </p>
+                <p> 年龄：<input type="number" max="200" min="1" v-model="one.age" /> </p>
+                <p> 地址：<input type="text" size="50" v-model="one.address" /> </p>
+                <p>
+                    性别：
+                    <label>
+                        <input type="radio" name="gender" value="1" :checked="one.gender==1" />男
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="2" :checked="one.gender==2" />女
+                    </label>
+                </p>
+                <p> 城市：<input type="text" v-model="one.city" /> </p>
+                <p>
+                    星座：
+                    <!-- 数据从js文件获取 -->
+                    <!-- 直接绑! -->
+                    <select v-model="one.seat">
+                        <option value="未知">--请选择--</option>
+                        <option v-for="seat in seats" :value="seat">{{seat}}</option>
+                    </select>
+                </p>
+                <p> <input type="button" class="btn btn-info" value="保存" @click="save" /> </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    provinces: area_data,
+                    cities: [],
+                    areas: [],
+                    users: user_data.list,
+                    seats: seats,
+                    formshow: false,
+                    one: {},
+                    district: {
+                        province: '-1',
+                        city: '-1',
+                        area: '-1'
+                    },
+                }
+            },
+            methods: {
+                update(index) {
+                    this.formshow = true
+                    // 都是引用数据类型,会修改users的值,和内存中user_data的值
+                    this.one = this.users[index]
+                },
+                save() {
+                    this.formshow = false
+                    // 如果没有uid就添加
+                    // if (typeof(this.one.uid) == 'undefined'){
+                    if (this.one.uid == null) {
+                        this.users.push(this.one)
+                    }
+                    this.one = {}
+                },
+                del(index) {
+                    // 数组的删除
+                    this.users.splice(index, 1)
+                },
+                add() {
+                    this.formshow = true
+                },
+                showCities() {
+                    if (this.district.province == '-1') {
+                        this.cities = []
+                    } else {
+                        this.provinces.forEach(p => {
+                            if (p.code == this.district.province) {
+                                this.cities = p.city
+                            }
+                        })
+                    }
+                    this.district.city = '-1'
+                    this.areas=[]
+                    this.district.area = '-1'
+                },
+                showAreas() {
+                    if (this.district.city == '-1') {
+                        this.areas = []
+                    } else {
+                        this.cities.forEach(c => {
+                            if (c.code == this.district.city) {
+                                this.areas = c.area
+                            }
+                        })
+                    }
+                    this.district.area = '-1'
+                }
+            }
+        }).mount('#root')
+    </script>
+</body>
+
+</html>
