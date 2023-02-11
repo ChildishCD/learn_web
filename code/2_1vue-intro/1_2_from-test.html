@@ -21,9 +21,9 @@
     </style>
 </head>
 
-<body>
-    <div id="root">
-        <form action="http://localhost:8080/web/book" method="post" >
+<body >
+    <div id="root" >
+        <form action="http://localhost:8080/webdemo/book" method="post" >
             <h1>图书信息录入</h1>
             <hr>
             <div id="cover" class="cover"></div>
@@ -69,8 +69,8 @@
             </p>
             <p>其他：
                 <!-- checkbox绑定的是checked -->
-                <label><input type="checkbox" name="is_vip" @change="vip($event)" v-model="bookOne.is_vip" value="0">收费</label>
-                <label><input type="checkbox" name="isRecommand" @change="Rec($event)" v-model="bookOne.isRecommand" value="0">首页推荐</label>
+                <label><input type="checkbox" name="is_vip" @change="vip()" v-model="vipBool" :value="bookOne.is_vip">收费</label>
+                <label><input type="checkbox" name="isRecommand" @change="Rec()" v-model="recBool" :value="bookOne.isRecommand">首页推荐</label>
             </p>
             <p>关键字:
                 <p><textarea name="keyword" cols="30" rows="2" placeholder="请输入关键字" v-model="bookOne.keyword"></textarea></p>
@@ -80,24 +80,20 @@
             </p>
             <input type="submit" value="提交">
         </form>
+        <textarea name="test" cols="30" rows="10" v-model="test"></textarea>
     </div>
 
     <script>
         Vue.createApp({
             data() {
-                return {
-                    bookTemplate: chuangbie_book.template,
-                    ftypes: chuangbie_book.ftype,
-                    stypeList: chuangbie_book.stype,
-                    stypes: [],
-                    bookOne: {
+                var one={
                         book_name: "",
                         author_name: "",
                         attribution: null,
                         ftype_id: null,
                         stype_id: null,
                         status: null,
-                        is_vip: false,
+                        is_vip: 1,
                         description: "",
                         cover_url: "",
                         keyword: "",
@@ -106,7 +102,23 @@
                         // last_update_chapter_name: "",
                         isRecommand: 0
                     }
+                var vBool = one.is_vip ==1
+                var rBool = one.isRecommand ==1
+
+                return {
+                    bookTemplate: chuangbie_book.template,
+                    ftypes: chuangbie_book.ftype,
+                    stypeList: chuangbie_book.stype,
+                    stypes: [],
+                    bookOne: one,
+                    vipBool : vBool,
+                    recBool : rBool
                 }
+            },
+            computed:{
+                test(){
+                    return JSON.stringify(this.bookOne)
+                },
             },
             methods: {
                 showStype() {
@@ -134,11 +146,14 @@
                 },
                 vip(event) {
                     //得到事件的对象
-                    event.target.value = this.bookOne.is_vip ? 1 : 0
+                    this.bookOne.is_vip = this.vipBool ? 1 : 0
                 },
                 Rec(event){
-                    event.target.value = this.bookOne.isRecommand ? 1 : 0
+                    this.bookOne.isRecommand = this,recBool ? 1 : 0
                 },
+                // compute(){
+                //     return this.bookOne.is_vip==1
+                // },
                 count(event){
                     if(this.bookOne.word_count == ''){
                         this.bookOne.word_count = 0

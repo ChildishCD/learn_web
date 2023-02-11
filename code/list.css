@@ -1,0 +1,14 @@
+.title{
+    font-size: xx-large;
+    font-weight: 800;
+    color: rgb(51, 51, 51);
+}
+.search{
+    float: right;
+
+    width: 50%;
+    font-size:medium;
+    outline: none;
+    border: 0;
+    background-color: lightgray;
+}

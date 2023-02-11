@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> 图书信息提交页面</title>
+    <script>window.sessionStorage.setItem('test',123)</script>
+    <script src="js/v3.2.8/vue.global.prod.js"></script>
+    <script src="data/chuangbie_book.js"></script>
+    <link rel="stylesheet" type="text/css" href="table.css" />
+    <style>
+        .attribution {
+            /* background-color: rgb(255, 197, 122); */
+            text-decoration: underline;
+            color: gray;
+        }
+
+        .cover {
+            background-color: gray;
+            background-size: cover;
+            height: 200px;
+            width: 150px;
+
+            margin-bottom: 10px;
+        }
+
+        .submit{
+            outline: none;
+            border: 0;
+            background-color: #ea6153;
+            font-size: larger;
+            font-weight: 800;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div class="wrapper">
+            <h1>图书信息录入</h1>
+            <form action="?????????????????" method="post">
+                <div class="table">
+                    <div class="row header">
+                        <div class="cell">
+                            必填
+                        </div>
+                        <div class="cell">
+                            选填
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="cell" data-title="必填">
+                            <hr>
+                            <p>书籍名:
+                                <input type="text" name="book_name" placeholder="请输入书籍名称" v-model="bookOne.bookName">
+                            </p>
+                            <p>作者名:
+                                <input type="text" name="author_name" placeholder="请输入作者名称" v-model="bookOne.authorName">
+                            </p>                            
+                            <p>书籍封面:
+                                <input type="url" name="cover_url" placeholder="请输入封面图片路径" @change="cover()"
+                                    v-model="bookOne.coverUrl">
+                            </p>
+                            <div id="cover" class="cover"></div>
+                            <hr>
+                            <input type="submit" value="提交" class="submit">
+                        </div>
+                        <div class="cell" data-title="选填">
+                            <hr>
+                            <p>总字数:
+                                <input type="number" name="word_count" oninput="this.value=this.value.replace(/\D/g);"
+                                    @change="count($event)" placeholder="请输入总字数" v-model="bookOne.wordCount">
+                            </p>
+                            <p>一级分类:
+                                <select name="ftype_id" @change="showStype()" v-model="bookOne.ftypeId">
+                                    <option value="null">---请选择---</option>
+                                    <option v-for="ft in ftypes" :value="ft.type_id">{{ft.type_name}}</option>
+                                </select>
+                            </p>
+                            <p>二级分类:
+                                <select name="stype_id" @change="showAttr()" v-model="bookOne.stypeId">
+                                    <option value="null">---请选择---</option>
+                                    <option v-for="st in stypes" :value="st.type_id">{{st.type_name}}</option>
+                                </select>
+                            </p>
+                            <p>频道：
+                                <span class="attribution">
+                                    <span v-show="bookOne.attribution == null">请选择图书分类</span>
+                                    <span v-show="bookOne.attribution == 1">男频</span>
+                                    <span v-show="bookOne.attribution == 2">女频</span>
+                                    <span v-show="bookOne.attribution == 3">出版</span>
+                                </span>
+                            </p>
+                            <p>书籍状态：
+                                <label><input type="radio" name="status" value="1" v-model="bookOne.status">连载</label>
+                                <label><input type="radio" name="status" value="2" v-model="bookOne.status">完本</label>
+                            </p>
+                            <p>其他：
+                                <!-- checkbox绑定的是checked -->
+                                <label><input type="checkbox" name="is_vip" @change="vip($event)" v-model="bookOne.isVip"
+                                        value="0">收费</label>
+                                <label><input type="checkbox" name="isRecommand" @change="Rec($event)" v-model="bookOne.isRecommand"
+                                        value="0">首页推荐</label>
+                            </p>
+                            <p>关键字:
+                            <p><textarea name="keyword" cols="30" rows="2" placeholder="请输入关键字"
+                                    v-model="bookOne.keyword"></textarea></p>
+                            </p>
+                            <p>简介:
+                            <p><textarea name="description" cols="30" rows="5" placeholder="请输入简介"
+                                    v-model="bookOne.description"></textarea></p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    // ftypes: chuangbie_book.ftype,
+                    // stypeList: chuangbie_book.stype,
+                    stypes: [],
+                    // bookOne: {
+                    //     book_name: "",
+                    //     author_name: "",
+                    //     attribution: null,
+                    //     ftype_id: null,
+                    //     stype_id: null,
+                    //     status: null,
+                    //     is_vip: false,
+                    //     description: "",
+                    //     cover_url: "",
+                    //     keyword: "",
+                    //     word_count: 0,
+                    //     // last_update_chapter_id: null,
+                    //     // last_update_chapter_name: "",
+                    //     isRecommand: 0
+                    // }
+                    bookOne :
+                }
+            },
+            methods: {
+                showStype() {
+                    this.stypes = []
+                    if (this.bookOne.ftype_id != null) {
+                        this.stypeList.forEach(st => {
+                            if (st.ftype_id == this.bookOne.ftype_id) {
+                                this.stypes.push(st)
+                            }
+                        })
+                    }
+                    this.bookOne.stype_id = null
+                    this.bookOne.attribution = null
+                },
+                showAttr() {
+                    if (this.bookOne.stype_id == null) {
+                        this.bookOne.attribution = null
+                    } else {
+                        this.stypes.forEach(st => {
+                            if (st.type_id == this.bookOne.stype_id) {
+                                this.bookOne.attribution = st.attribution
+                            }
+                        })
+                    }
+                },
+                vip(event) {
+                    //得到事件的对象
+                    event.target.value = this.bookOne.is_vip ? 1 : 0
+                },
+                Rec(event) {
+                    event.target.value = this.bookOne.isRecommand ? 1 : 0
+                },
+                count(event) {
+                    if (this.bookOne.word_count == '') {
+                        this.bookOne.word_count = 0
+                    }
+                },
+                cover() {
+                    var c = document.getElementById('cover')
+                    c.style.backgroundImage = "url('" + this.bookOne.cover_url + "')"
+                },
+            }
+        }).mount("#root")
+    </script>
+</body>
+
+</html>

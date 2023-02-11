@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理</title>
+    <link rel="stylesheet" type="text/css" href="table.css" />
+    <link rel="stylesheet" type="text/css" href="list.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="table">
+            <div class="row">
+                <div class="cell">
+                    <span class="title">图书室 </span>
+                    <a href="">上一页</a> | 
+                    <a href="">下一页</a>
+                </div>
+                <div class="cell">
+                    <form action="https://cn.bing.com/search" id="search">
+                        <input type="text" name="q" class="search" placeholder="请输入图书关键字" onkeydown="search(event)">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="table">
+
+            <div class="row header">
+                <div class="cell">书名</div>
+                <div class="cell">作者</div>
+                <div class="cell">频道</div>
+                <div class="cell">状态</div>
+                <div class="cell">费用</div>
+                <div class="cell">简介</div>
+                <div class="cell">操作</div>
+            </div>
+
+            <div class="row">
+                <div class="cell" data-title="书名"></div>
+                <div class="cell" data-title="作者"></div>
+                <div class="cell" data-title="频道"></div>
+                <div class="cell" data-title="状态"></div>
+                <div class="cell" data-title="费用"></div>
+                <div class="cell" data-title="简介">
+                </div>
+                <div class="cell" data-title="操作"> |
+                    <span><a href="">详情</a></span> |
+                    <span><a href="">修改</a></span> |
+                    <span><a href="">删除</a></span> |
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function search(e){
+            var evt = window.event || e;
+            if(evt.keyCode == 13){
+                document.getElementById('search').submit()
+            }
+        }
+    </script>
+</body>
+
+</html>

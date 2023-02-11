@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="mavendemo2:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b81bba89-7931-4a29-a1b3-95ba16a56d6c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../mavendamo2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendamo2/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendamo2/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendamo2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendamo2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendamo2/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo/src/main/java/com/javasm/user/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Demo/Demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/book/dao/BookDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/book/model/BookModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/book/service/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/book/servlet/BookDetailServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/book/servlet/BookServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/type/dao/TypeDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/type/model/FtypeModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/type/model/StypeModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/type/service/TypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/user/UserModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/user/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DBHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/JavasmDBUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/PageUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/ParameterUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/ReqHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Roster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/book_detail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/book_list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/artifacts/mavendemo3_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/mavendemo3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/demo/DemoServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/login/IndexServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/login/LoginDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/login/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/login/UserLoginModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/novel/NovelServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/user/UserModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/user/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/utils/DBHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/utils/JavasmDBUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/utils/PageUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/utils/ParameterUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/utils/Roster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/web/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_1vue-intro/1_2_from-test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../2_1vue-intro/1_2_from-test.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/Program/apache-maven-3.9.0" />
+        <option name="userSettingsFile" value="D:\Program\apache-maven-3.9.0\conf\settings-javasm.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2LWr8PuqUtDxB03T3gGSEgWyfyK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Administrator/Desktop/learn_web/code/mavendemo2/src/main/resources",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\learn_web\code\mavendemo2\src\main\resources" />
+      <recent name="C:\Users\Administrator\Desktop\learn_web\code\mavendemo2\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.85">
+    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Demo.Demo" />
+      <module name="mavendemo2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="book.test1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="book.test1" />
+      <module name="mavendemo2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="type.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 8.5.85" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.85" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="BROWSER_ID" value="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="mavendemo2:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/mavendemo2" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="28040d07-8353-4f11-8331-24d631ce35f1" />
+        <option name="JNDI_PORT" value="1098" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="4258" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="mavendemo2:war" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.book.test1" />
+      <item itemvalue="Application.Demo" />
+      <item itemvalue="Tomcat Server.Tomcat 8.5.85" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.book.test1" />
+        <item itemvalue="Application.Demo" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b81bba89-7931-4a29-a1b3-95ba16a56d6c" name="Changes" comment="" />
+      <created>1675997519386</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675997519386</updated>
+      <workItem from="1675997520965" duration="44008000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
