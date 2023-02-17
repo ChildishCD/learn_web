@@ -10,82 +10,126 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b81bba89-7931-4a29-a1b3-95ba16a56d6c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../mavendamo2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendamo2/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendamo2/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendamo2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendamo2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendamo2/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo/src/main/java/com/javasm/user/UserServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Demo/Demo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/book/dao/BookDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/book/model/BookModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/book/service/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/book/servlet/BookDetailServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/book/servlet/BookServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/type/dao/TypeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/type/model/FtypeModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/type/model/StypeModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/type/service/TypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/user/UserModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/user/UserServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DBHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/JavasmDBUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/PageUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/ParameterUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/ReqHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Roster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/book_detail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/book_list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/artifacts/mavendemo3_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/mavendemo3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/demo/DemoServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/login/IndexServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/login/LoginDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/login/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/login/UserLoginModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/novel/NovelServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/user/UserModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/user/UserServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/utils/DBHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/utils/JavasmDBUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/utils/PageUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/utils/ParameterUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/java/utils/Roster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/web/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mavendemo3/src/main/web/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2_1vue-intro/1_2_from-test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../2_1vue-intro/1_2_from-test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/src/main/java/base/sevlet/BaseServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/src/main/java/book/dao/BookDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/src/main/java/book/model/BookModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/src/main/java/book/service/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/src/main/java/utils/DBHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/src/main/java/utils/JavasmDBUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/src/main/java/utils/PageUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/src/main/java/utils/ParameterUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/src/main/java/utils/ReqHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/src/main/java/utils/Roster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bookstore/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/book/servlet/BookTestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/china/dao/ChinaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/china/model/ChinaModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/china/servlet/ChinaServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cookie/CookieServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/cookie.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1_0Whac-A-Mole.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1_1html-intro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1_2from-reinforce.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1_3css-intro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1_4js-intro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1_5js-BOM.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1_5js-DOM.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_1vue-intro/1_1HTML_API.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_1vue-intro/1_2SFC_API.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_1vue-intro/1_2_from-test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_1vue-intro/2_1Directives.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_1vue-intro/2_2DataTable.HTML" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_1vue-intro/data/area_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_1vue-intro/data/chuangbie_book.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_1vue-intro/data/seats.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_1vue-intro/data/sm_user_info_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_1vue-intro/js/v2.6.10/vue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_1vue-intro/js/v2.6.10/vue.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2_1vue-intro/js/v3.2.8/vue.global.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/mole.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/Backup_of_打地鼠.cdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/ground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/hammer.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/hammer2.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/happy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/ok.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/pic1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/pic2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/pic3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/pic4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/pic5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/pic6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/pic7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/pic8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/punch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../img/打地鼠.cdr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/mole.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../list.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mavendamo2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mavendamo2/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mavendamo2/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mavendamo2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mavendamo2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mavendamo2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Demo/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Demo/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/book/servlet/BookDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/book/servlet/BookDetailServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/DBHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DBHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/book_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/book_list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Demo/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Demo/Demo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/book/dao/BookDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/book/dao/BookDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/book/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/book/service/BookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/book/servlet/BookDetailServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/book/servlet/BookDetailServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/book/servlet/BookServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/book/servlet/BookServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/type/dao/TypeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/type/dao/TypeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/type/model/FtypeModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/type/model/FtypeModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/type/model/StypeModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/type/model/StypeModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/type/service/TypeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/type/service/TypeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/user/UserModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/user/UserModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/user/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/user/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/DBHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/DBHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/JavasmDBUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/JavasmDBUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/PageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/PageUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/ParameterUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/ParameterUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/ReqHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/ReqHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/Roster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/Roster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/Demo/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/Demo/Demo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/book/dao/BookDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/book/dao/BookDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/book/servlet/BookDetailServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/book/servlet/BookDetailServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/type/dao/TypeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/type/dao/TypeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/type/model/FtypeModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/type/model/FtypeModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/type/model/StypeModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/type/model/StypeModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/type/service/TypeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/type/service/TypeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/utils/DBHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/utils/DBHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/utils/JavasmDBUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/utils/JavasmDBUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/utils/PageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/utils/PageUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/utils/ParameterUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/utils/ParameterUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/utils/ReqHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/utils/ReqHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/utils/Roster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/classes/utils/Roster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/WEB-INF/lib/fastjson-1.2.47.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/mavendemo2/book_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/mavendemo2/book_list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,8 +139,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -129,18 +173,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Administrator/Desktop/learn_web/code/mavendemo2/src/main/resources",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Desktop/learn_web/code/mavendemo2/src/main/resources&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Desktop\learn_web\code\mavendemo2\src\main\resources" />
@@ -175,6 +219,7 @@
       </method>
     </configuration>
     <configuration name="Tomcat 8.5.85" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.85" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER" value="false" />
       <option name="BROWSER_ID" value="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
@@ -271,8 +316,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.book.test1" />
         <item itemvalue="Application.Demo" />
+        <item itemvalue="Application.book.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -285,6 +330,10 @@
       <option name="presentableId" value="Default" />
       <updated>1675997519386</updated>
       <workItem from="1675997520965" duration="44008000" />
+      <workItem from="1676165901691" duration="3557000" />
+      <workItem from="1676184520746" duration="4908000" />
+      <workItem from="1676253066703" duration="30557000" />
+      <workItem from="1676599943418" duration="2246000" />
     </task>
     <servers />
   </component>

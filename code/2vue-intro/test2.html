@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- axios 是基于promise对象的 http库  简洁好用 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- qs  把json对象 转成urlencoded格式 后台可以直接读取 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/qs/6.10.5/qs.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <input type="button" value="test" onclick="f2()">
+    </div>
+
+    <script>
+        function f1() {
+            axios.get("http://localhost:8080/bookstore/book")
+                .then(function (response) {//处理头信息等，可以不写这个
+                    //当前普通的匿名方法function(){}中的this为window或undefined对象
+                    return response.data;//获取json数据
+                }).then((json) => {//使用匿名箭头方法，才能获取data中数据
+                    console.log(json)
+                })
+        }
+        function f2() {
+            var keyword = ''
+            var page = {
+                total: 0,
+                pageNum: 1,
+                pageSize: 10
+            }
+            var str = "?method=list&" + Qs.stringify(page) + "&keyword=" + keyword
+            axios.get("http://localhost:8080/bookstore/book"+str)
+            .then((response) => {
+                    console.log(response.data)
+                })
+        }
+    </script>
+</body>
+
+</html>

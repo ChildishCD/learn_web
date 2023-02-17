@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>China</title>
+    <script src="js/v3.2.8/vue.global.prod.js"></script>
+    <!-- axios 是基于promise对象的 http库  简洁好用 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- qs  把json对象 转成urlencoded格式 后台可以直接读取 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/qs/6.10.5/qs.min.js"></script>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <script src="https://webapi.amap.com/maps?v=2.0&key=ddb105dcfb7cad565d463928cac77598"></script>
+
+    <style>
+        #container {
+            width: 500px;
+            height: 500px;
+        }
+        .inputs{
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div id="container"></div>
+        <div class="inputs">
+            <p>省：
+                <select v-model="theId.proId" @change="showCities()">
+                    <option value="">---请选择---</option>
+                    <option v-for="p in provinces" :value="p.id">{{p.name}}</option>
+                </select>
+            </p>
+            <p>市：
+                <select v-model="theId.cityId" @change="showAreas()">
+                    <option value="">---请选择---</option>
+                    <option v-for="c in cities" :value="c.id">{{c.name}}</option>
+                </select>
+            </p>
+            <p>县：
+                <select v-model="theId.areaId" @change="setLocation()">
+                    <option value="">---请选择---</option>
+                    <option v-for="a in areas" :value="a.id">{{a.name}}</option>
+                </select>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    mapUrl: "https://restapi.amap.com/v3/geocode/geo?key=493ee0422524a46962396b922ffaab2d",
+                    dataUrl: "http://localhost:8080/mavendemo2/China",
+                    provinces: [],
+                    cities: [],
+                    areas: [],
+                    theId: {
+                        proId: '',
+                        cityId: '',
+                        areaId: '',
+                    },
+                    map: ''
+                }
+            },
+            methods: {
+                setLocation() {
+                    if (this.theId.proId == '') {
+                        this.map.setZoom(3)
+                    } else {
+                        var pName = '', cName = '', aName = ''
+                        this.provinces.forEach(p => {
+                            if (p.id == this.theId.proId) {
+                                pName = p.name
+                            }
+                        });
+                        this.cities.forEach(c => {
+                            if (c.id == this.theId.cityId) {
+                                cName = c.name
+                            }
+                        });
+                        this.areas.forEach(a => {
+                            if (a.id == this.theId.areaId) {
+                                aName = a.name
+                            }
+                        });
+                        str = this.mapUrl + '&address=' + pName + cName + aName
+                        console.log(str)
+                        axios.get(str)
+                            .then((response) => {
+                                var loc = response.data.geocodes[0].location
+                                loc = loc.split(',').map(Number)
+                                this.map.setCenter(loc)
+                                if (cName == '' && aName == '') {
+                                    this.map.setZoom(6)
+                                } else if (aName == '') {
+                                    this.map.setZoom(9)
+                                } else {
+                                    this.map.setZoom(11)
+                                }
+                            })
+                    }
+                },
+                getPramStr(method) {
+                    return Qs.stringify(this.theId) + "&method=" + method
+                },
+                showCities() {
+                    if (this.theId.proId == '') {
+                        this.cities = []
+                    } else {
+                        axios.get(this.dataUrl + '?' + this.getPramStr('getCities'))
+                            .then((response) => {
+                                var data = response.data
+                                console.log(data)
+                                if (data.code == 200) {
+                                    this.cities = data.data
+                                } else {
+                                    alert(data.msg)
+                                }
+                            })
+                    }
+                    this.areas = []
+                    this.theId.cityId = ''
+                    this.theId.areaId = ''
+                    this.setLocation()
+                },
+                showAreas() {
+                    if (this.theId.cityId == '') {
+                        this.areas = []
+                    } else {
+                        axios.get(this.dataUrl + '?' + this.getPramStr('getAreas'))
+                            .then((response) => {
+                                var data = response.data
+                                console.log(data)
+                                if (data.code == 200) {
+                                    this.areas = data.data
+                                } else {
+                                    alert(data.msg)
+                                }
+                            })
+
+                    }
+                    this.theId.areaId = ''
+                    this.setLocation()
+                }
+            },
+            //挂载之后执行的方法
+            mounted() {
+                this.map = new AMap.Map('container', {
+                    viewMode: '2D', // 默认使用 2D 模式，如果希望使用带有俯仰角的 3D 模式，请设置 viewMode: '3D',
+                    zoom: 3, //初始化地图层级
+                    center: [106.551556, 29.563009] //初始化地图中心点
+                });
+                //查询省名列表
+                //各省的pid为0即中国
+                // console.log(this.getPramStr('getProvinces'))
+                axios.get(this.dataUrl + '?' + this.getPramStr('getProvinces'))
+                    .then((response) => {
+                        var data = response.data
+                        if (data.code == 200) {
+                            this.provinces = data.data
+                        } else {
+                            alert(data.msg)
+                        }
+                    })
+            }
+        }).mount("#root")
+    </script>
+</body>
+
+</html>

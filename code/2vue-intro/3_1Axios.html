@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- <script src="data/chuangbie_book.js"></script> -->
+    <script src="js/v3.2.8/vue.global.prod.js"></script>
+
+    <!-- axios 是基于promise对象的 http库  简洁好用 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- qs  把json对象 转成urlencoded格式 后台可以直接读取 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/qs/6.10.5/qs.min.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- <input id="search" type="text" name="q" class="search" placeholder="请输入图书关键字" required="required"> -->
+        <input type="button" value="test1" @click="f2()">
+        <hr>
+        <div>
+            <input type="button" value="test2" @click="f3()">
+            <input type="text" id="book_id" ref="id" size="2">
+        </div>
+        <hr>
+        <div>
+            <p> username:
+                <input type="text" placeholder="Please input username" v-model="user.username">
+            </p>
+            <p> password:
+                <input type="text" placeholder="Please input password" v-model="user.password">
+            </p>
+            <p><input type="button" value="test3" @click="f4()"></p>
+        </div>
+        <hr>
+        <div>
+            <ul id="list">
+                <li v-for="(book,index) in list">{{book.bookName}}</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    id: '',
+                    list: [],
+                    user: {
+                        username: '',
+                        password: '',
+                    }
+                }
+            },
+            methods: {
+                f1() {
+                    //js自带的fetch方法
+                    fetch("http://localhost:8080/mavendemo2/book/test")
+                        .then(function (response) {
+                            // console.log(response);//响应的所有信息
+                            return response.json()//获取json数据
+                        }).then(function (data) {//是在上一个then方法返回值的基础上运行
+                            var list = data.list
+                            console.log(list)
+                            var html = ''
+                            list.forEach(user => {
+                                html = html + '<li>' + user.authorName + '</li>'
+                            });
+                            document.querySelector('#list').innerHTML = html
+                        })
+                },
+                f2() {
+                    axios.get("http://localhost:8080/mavendemo2/book/test")
+                        .then(function (response) {//处理头信息等，可以不写这个
+                            //当前普通的匿名方法function(){}中的this为window或undefined对象
+                            return response.data;//获取json数据
+                        }).then((json) => {//使用匿名箭头方法，才能获取data中数据
+                            console.log(json)
+                            this.list = json.data;//服务器返回的数据，给data中的变量
+                        })
+                },
+                f3() {
+                    var url = "http://localhost:8080/mavendemo2/book/test"
+                    var paramsStr = "book_id=" + this.$refs.id.value
+                    axios.post(url, paramsStr)
+                        .then((response) => {
+                            var data = response.data
+                            var code = data.code
+                            if (data.code == 200) {
+                                this.list = [data.data]
+                            } else {
+                                alert(data.msg)
+                            }
+                        })
+                },
+                f4() {
+                    //Qs 实现了post字符串和JSON对象的相互转换
+                    var paramsStr = Qs.stringify(this.user)
+                    // paramsStr = JSON.stringify(this.user)
+                    console.log(paramsStr)
+                    url = 'https://cn.bing.com/search?q=%E4%BD%A0%E7%9A%84%E8%AF%9D&form=QBLH&sp=-1&pq=&sc=0-0&qs=n&sk=&cvid=5E2E5BD304944F53BCCB10BD248E05E5&ghsh=0&ghacc=0&ghpl='
+                    var params =  Qs.parse(url.split('?')[1])//可以转换post的字符串为json对象
+                    // params = JSON.parse(url.split('?')[1])//这个方法只能转json字符串
+                    console.log(params)
+                }
+            }
+        }).mount("#root")
+
+
+
+    </script>
+</body>
+
+</html>

@@ -32,8 +32,8 @@
                     |<span>当前共查询到 ${count} 条结果</span>
             </div>
             <div class="cell">
-                <form action="book" id="search">
-                    <input type="text" name="q" class="search" placeholder="请输入图书关键字" onkeydown="search(event)">
+                <form action="book" >
+                    <input id="search" type="text" name="q" class="search" placeholder="请输入图书关键字" required="required">
                 </form>
             </div>
         </div>
@@ -95,12 +95,6 @@
 </div>
 
 <script>
-    function search(e){
-        var evt = window.event || e;
-        if(evt.keyCode == 13){
-            document.getElementById('search').submit()
-        }
-    }
     function bookDetail(node) {
         var id = node.parentNode.getAttribute('book-id')
         location.href="detail?method=detail&id=" + id
